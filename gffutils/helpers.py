@@ -1,7 +1,7 @@
 import copy
 import sys
 import os
-import simplejson as json
+import json
 import time
 import tempfile
 from gffutils import constants

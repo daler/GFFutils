@@ -474,14 +474,14 @@ def test_issue_198():
 
 
 def test_issue_204():
-    gff="""\
+    txt = dedent("""\
     chr1 AUGUSTUS gene 68330 73621 1 - . ID=g1903;
     chr1 AUGUSTUS mRNA 68330 73621 1 - . ID=g1903.t1;Parent=g1903;
     chr1 Pfam protein_match 73372 73618 1 - . ID=g1903.t1.d1;Parent=g1903.t1;
     chr1 Pfam protein_hmm_match 73372 73618 1 - . ID=g1903.t1.d1.1;Parent=g1903.t1.d1;
-    """
+    """)
 
-    db = gffutils.create_db(gff.replace(' ', '\t'), ':memory:', from_string=True)
+    db = gffutils.create_db(txt.replace(" ", "\t"), ":memory:", from_string=True)
 
     parents1 = {
         "g1903": [],
